@@ -2,7 +2,8 @@
 
 {
   imports = [
-    (modulesPath + "/profiles/minimal.nix")
+    ./modules/trimmed.nix
+    ./modules/stylix.nix
     ./hardware-configuration.nix
   ];
 
@@ -29,6 +30,7 @@
     enable = true;
     windowManager.dwm.enable = true;
     displayManager.startx.enable = true;
+    displayManager.startx.generateScript = true;
   };
   services.libinput.enable = true;
   hardware.graphics.enable = true;
@@ -60,8 +62,4 @@
   };
 
   system.stateVersion = "26.05";
-
-  # minimal.nix turns fontconfig off; dwm/st/dmenu need it
-  fonts.fontconfig.enable = true;
-  fonts.packages = [ pkgs.dejavu_fonts ];
 }
