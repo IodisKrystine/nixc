@@ -4,6 +4,7 @@
   imports = [
     ./modules/trimmed.nix
     ./modules/stylix.nix
+    ./modules/suckless-theme.nix
     ./hardware-configuration.nix
   ];
 
@@ -44,8 +45,6 @@
 
   # ── Packages ──
   environment.systemPackages = with pkgs; [
-    st
-    dmenu
     git
   ];
   environment.variables.EDITOR = "nano";
